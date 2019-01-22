@@ -15,6 +15,6 @@
 
 # HTML 引入css
 
-`<link rel="stylesheet" type="text/css" href="/CSS/index.css">
-
- `
+`<link rel="stylesheet" type="text/css" href="/CSS/index.css"> `
+# 导航
+用户登陆后直接将所有界面缓存好就行了，当用户点击导航对应按钮时可以使用ajax来请求并更新数据
