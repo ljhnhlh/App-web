@@ -9,8 +9,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function(req, res) {
     console.log(req.path);
+    //res.send("success");
     res.sendFile('E:\\APP\\HTML\\signUp.html');
 });
+
 app.get('*', function(req, res) {
     console.log(req.url);
     res.sendFile('E:/APP/' + req.path);
