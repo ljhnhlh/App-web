@@ -28,9 +28,11 @@ app.post('/login', function(req, res) {
     console.log('login' + req.body);
     var str = 'select pwd ,uid from user where uname = ' + '\'' + req.body.name + '\';';
     connection.query(str, function(err, rows, fields) {
-        if (err) throw err;
-        console.log('row : ' + rows);
-    })
+        if (err)
+            console.log(err);
+        else
+            console.log('row : ' + rows);
+    });
 
     res.end('success');
 
@@ -42,8 +44,10 @@ app.post('/register', function(req, res) {
         '\'' + req.body.user + '\',' +
         '\'' + req.body.password + '\');'
     connection.query(str, function(err, rows, fields) {
-            if (err) throw err;
-            console.log('row : ' + rows[0]);
+            if (err)
+                console.log(err);
+            else
+                console.log('row : ' + rows);
         })
         // connection.end();
     res.end('success');

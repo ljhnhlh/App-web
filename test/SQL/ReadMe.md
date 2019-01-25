@@ -16,3 +16,31 @@
 2. SQL报错后会导致服务器终止，测试一下，使用 if(err) console.log(err) ,看看会不会终止
 3. 如何设置权限更低的SQL用户
 4. 如何使用查询得到的数据
+5. 目前连接数据库的方法安全性较低，因为貌似关掉了数据的什么功能才能连上，要处理下，不然会有数据库安全(应该与问题3是类似的问题)
+
+
+
+# 解决的问题
+
+1. 
+
+2. 使用console.log 不会终止，并且可通过以下字段可获知错误类型，方便判断是什么错误
+
+   ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190126001834235.png)
+
+   (下图，前者为console(err)的输出，后者为只输出err.code,用此可以确定错误类型)
+
+![](https://img-blog.csdnimg.cn/20190126001514617.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MzAzODYy,size_16,color_FFFFFF,t_70)
+
+
+
+4. 通过使用[i].xxx，xxx为表的列属性，来引用某一行的某个属性，eg：
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190126001250838.png)
+
+
+
+结果为：
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190126001142478.png)
+
