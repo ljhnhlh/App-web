@@ -7,14 +7,16 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="" />
-    <script src=""></script>
+    <script src="/JS/signUp.js"></script>
 </head>
 
 <body>
-    <form method="POST" action="" style="border:1px solid black;position: relative;float: center;">
-        <div>User:<input type="text" name="user" type="submit"> </div>
-        <div>Password:<input type="password" name="password" type="submit"> </div>
-        <button type="submit">登陆</button>
+    <form method="POST" id="act" style="border:1px solid black;position: relative;float: center;">
+        <div>User:<input type="text" name="user"> </div>
+        <div>Password:<input type="password" name="password"> </div>
+        <div><input type="text" name="rol" id="rol" hidden=true></div>
+        <button onclick="register()">注册</button>
+        <button onclick="login()">登陆</button>
         <button type="reset">清除</button>
     </form>
 </body>

@@ -1,0 +1,26 @@
+create table user(
+    uid int unsigned auto_increment not null,
+    uname varchar(20),
+    pwd varchar(20),
+    primary key (uid)
+);
+create table message(
+    mid int unsigned auto_increment,
+    uid int unsigned ,
+    cnum int unsigned,
+    issue_time datetime,
+    content text,
+    primary key (mid,uid),
+    foreign key (uid) references user(uid)
+);
+
+create table commit(
+    mid int unsigned,
+    uid1 int unsigned,
+    uid2 int unsigned,
+    content text,
+    num  int unsigned,
+    foreign key(mid) references message(mid),
+    foreign key(uid1) references user(uid),
+    foreign key(uid2) references user(uid)
+);
