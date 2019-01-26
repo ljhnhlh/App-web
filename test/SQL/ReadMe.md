@@ -1,3 +1,5 @@
+[TOC]
+
 
 
 [MySQL官方文档](https://www.npmjs.com/package/mysql)
@@ -43,4 +45,24 @@
 结果为：
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190126001142478.png)
+
+# 验证数据是否在表内：
+
+使用 `select 1 from tablename where col = 'col' limit 1;` 
+
+如：
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190126191148456.png)
+
+
+
+因为lj不在列表中，所以返回空集，空集是undefined，所以只要判断是否undefined即可知道是否存在
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190126191228392.png)
+
+
+
+# .format :规范化sql语句
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190126213836866.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MzAzODYy,size_16,color_FFFFFF,t_70)
 

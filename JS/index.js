@@ -20,6 +20,16 @@ $(document).ready(function() {
         temp++;
         $('#num').text(temp.toString());
     })
+    $('#new').click(function() {
+        $.post("/new", {
+                text: $('#newText').val()
+            },
+            function(data) {
+                alert(data);
+                $('#newText').val(data);
+            }
+        );
+    })
     $('#ShowComment').click(function() {
         $('#comment_block').show();
     });
