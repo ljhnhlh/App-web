@@ -10,7 +10,7 @@
 
 每次请求，使用connection.connect()，请求完毕使用end(),会报错，后来改成一直开启连接，不知道会不会有什么危险。
 
-
+`ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';` 这个语句貌似将密码强度减弱了（密码强度指校验强度？！）
 
 # 需要思考的问题
 
