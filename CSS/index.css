@@ -1,0 +1,14 @@
+img {
+    width: 30px;
+    height: 30px;
+}
+
+.message {
+    border: 1px solid black;
+    width: 200px;
+    position: relative;
+}
+
+.inline {
+    display: inline-block;
+}

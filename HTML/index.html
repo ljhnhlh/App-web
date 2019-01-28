@@ -12,18 +12,19 @@
     <input id="newText" name="newText" value="please write down your feeling" style="font-size: 10px">
     <button id="new">new</button>
 
-    <div style="border:1px solid black; width: 200px;position: relative;">
-        <img src="/IMG/fourth.jpg" id="img1" style="width: 30px; height: 30px;">
-        <div style="display:inline-block;">昵称</div>
-        <div style="display:inline-block;position: relative;">
+    <div class="message" id='msg_temp'>
+        <!-- <img src="/IMG/fourth.jpg" id="img1">
+        <div class="inline">昵称</div>
+        <div class="inline">
             <button>help</button>
         </div>
-        <p> asdjfkllllllllllllasdjflkasjlfkj</p>
+        <p></p>
         <div>
             <button id="reply">回复</button>
             <button id="parise">点赞</button>
-            <div id="num" style="display:inline-block;font-size: 20pt">0</div>
-            <button id="ShowComment">打开</button></div>
+            <div id="num" class="inline">0</div>
+            <button id="ShowComment">打开</button>
+        </div> -->
     </div>
     <!-- 写评论 -->
     <div id="answer" hidden=true><input type="text" id="inp" type="submit"> <button onclick="update">提交</button></div>
@@ -35,3 +36,24 @@
 </body>
 
 </html>
+<script type="text/html" id="msg">
+    <div class="message" id='{{mid}}'>
+        <img src="/IMG/fourth.jpg">
+        <div class="inline">昵称</div>
+        <div class="inline">
+            <button>help</button>
+        </div>
+        <p>{{content}}</p>
+        <div>
+            <button id="reply">回复</button>
+            <button id="parise">点赞</button>
+            <div id="num" class="inline">0</div>
+            <button id="ShowComment">打开</button>
+        </div>
+    </div>
+    <!-- 写评论 -->
+    <div id="answer{{mid}}" hidden=true><input type="text" type="submit"> <button onclick="update">提交</button></div>
+    <!-- 查看评论并回复 -->
+    <div id="comment{{mid}}" hidden=true>
+    </div>
+</script>
