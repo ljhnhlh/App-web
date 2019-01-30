@@ -1,5 +1,9 @@
 [Chat ](https://socket.io/get-started/chat/)
 
+[socket.io](https://socket.io/docs/rooms-and-namespaces/)
+
+
+
 # 问题
 
 1. 如何存储消息方的地址(或者说，在没有请求的情况下，服务器怎么知道该用户的IP，然后决定发送消息到哪里，就像你有A的消息，你知道A的账户，但你不知道他家的地址，你就无法向他传递消息了)
