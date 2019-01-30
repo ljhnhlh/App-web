@@ -63,12 +63,11 @@
     <form action="">
         <input id="m" autocomplete="off" /><button>Send</button>
     </form>
-    <ul id="userlist">
-        <li>asdfsd</li>
-        <li>fsdafd</li>
+    <ul id="userlist">friend
+        <li>sdf</li>
     </ul>
-    <ul id="chatBox">
-        <li>chat</li>
+    <ul id="chatBox">chat
+
     </ul>
     <input id="chatId" value="chatting">
     <button id="chatBut">发送</button>
@@ -79,25 +78,33 @@
         var chatname = '';
         $(function() {
             var socket = io();
-            $('li').click(function(e) {
+            $('li').click(function() {
                 var temp = $(this).text();
+                alert(temp);
                 $('#chatBox').text(temp);
                 chatname = temp;
             });
-            $('chatBut').click(function() {
+            $('#chatBut').click(function() {
+
                 socket.emit('privatechat', {
                     name: chatname,
                     msg: $('#chatId').val()
                 });
             });
-            socket.on('chatBox', function(msg) {
-                $('#chatBox').append('<li>').text(msg);
+            socket.on('chatBox', function(msg) { //私人用户聊天
+                $('#chatBox').append($('<li>').text(msg));
             })
             socket.on('addMan', function(msg) { //有新用户加入，更新好友列表
-                $('#userlist').append('<li>').text(msg);
+                $('#userlist').append($('<li>').text(msg).click(function() {
+                    var temp = $(this).text();
+                    alert(temp);
+                    $('#chatBox').text(temp);
+                    chatname = temp;
+                }));
             });
             $('#n').click(function() {
-                name = $('nameInput').val();
+                name = $('#nameInput').val();
+                $('#nameInput').val('');
                 socket.emit('login', name);
             })
             $('form').submit(function(e) {
