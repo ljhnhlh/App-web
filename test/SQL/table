@@ -1,8 +1,12 @@
 create table user(
-    uid int unsigned auto_increment not null,
-    uname varchar(20),
-    pwd varchar(20),
-    primary key (uid)
+    openid varchar(30),
+    nikname varchar(20),
+    avatarUrl text,
+    gender  varchar(1),
+    school  varchar(30),
+    wechat  varchar(50),
+    alipay  varchar(20),
+    primary key (openid)
 );
 create table message(
     mid int unsigned auto_increment,
